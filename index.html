@@ -174,8 +174,28 @@ img{max-width:100%;display:block;}
 .logo{display:flex;align-items:center;gap:10px;}
 .logo-icon{background:var();color:#fff;width:72px;height:52px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;overflow:hidden;}
 .logo-icon img{width:100%;height:100%;object-fit:cover;display:block;}
-.navbar .logo-icon{width:96px;height:52px;flex:0 0 auto;}
-.navbar .logo-icon img{object-fit:contain;transform:scale(1.08);transform-origin:center;}
+.navbar .logo-icon{
+  width:70px;
+  height:70px;
+  flex:0 0 auto;
+  border-radius:30%;
+  background:linear-gradient(135deg,#0a2d5a 0%,#1a5fb4 100%);
+  border:1px solid rgba(45,125,210,.3);
+  box-shadow:0 2px 14px rgba(26,95,180,.3);
+  padding:0;
+}
+.navbar .logo-icon img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  filter:brightness(1.15) saturate(1.1);
+  transform:none;
+  transform-origin:center;
+}
+.navbar .logo-texts{display:flex;flex-direction:column;line-height:1.1;}
+.navbar .logo-name{font-size:1.4rem;font-weight:800;color:#0d3d7a;letter-spacing:-.01em;}
+.navbar .logo-name span{color:#1a5fb4;}
+.navbar .logo-tagline{font-size:.58rem;font-weight:700;color:#888;letter-spacing:.14em;text-transform:uppercase;margin-top:1px;}
 .logo-text{font-size:1.5rem;font-weight:800;color:var(--blue-dark);}
 .logo-text span{color:var(--blue);}
 .nav-links{display:flex;align-items:center;gap:4px;}
@@ -424,6 +444,8 @@ img{max-width:100%;display:block;}
 @media(max-width:768px){
   .topbar{display:none;}
   .hamburger{display:flex;}
+  .navbar .logo-name{font-size:1.1rem;}
+  .navbar .logo-tagline{font-size:.5rem;}
   .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.1);gap:4px;}
   .nav-links.open{display:flex;}
   .dropdown-menu{position:static;box-shadow:none;border:none;padding:6px 0 6px 16px;display:none!important;}
@@ -464,7 +486,10 @@ img{max-width:100%;display:block;}
   <div class="container nav-inner">
     <a href="#" class="logo" onclick="showPage('home')">
       <span class="logo-icon"><img src="WhatsApp_Image_2026-02-21_at_22.40.25-removebg-preview.png" alt="JediCare Logo"/></span>
-      <span class="logo-text">Jedi<span>Care</span> Medical Centre</span>
+      <span class="logo-texts">
+        <span class="logo-name">Jedi<span>Care</span></span>
+        <span class="logo-tagline">Medical Centre</span>
+      </span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1705,7 +1730,7 @@ img{max-width:100%;display:block;}
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo" onclick="showPage('home')">
-          <span class="logo-icon"><img src="favicon.svg" alt="JediCare Logo"/></span>
+          <span class="logo-icon"><img src="WhatsApp Image 2026-02-21 at 22.40.25.jpeg" alt="JediCare Logo"/></span>
           <span class="logo-text">Jedi<span>Care</span></span>
         </a>
         <p>Our mission is to provide quality, compassionate, and responsive healthcare services to every patient, every time.</p>
