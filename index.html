@@ -163,6 +163,8 @@ img{max-width:100%;display:block;}
 .topbar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
 .topbar-left{display:flex;gap:20px;flex-wrap:wrap;}
 .topbar-left span{display:flex;align-items:center;gap:6px;opacity:.9;}
+.topbar-left a{display:flex;align-items:center;gap:6px;opacity:.9;color:#fff;transition:.2s;}
+.topbar-left a:hover{opacity:1;}
 .topbar-right{display:flex;gap:12px;}
 .topbar-right a{color:#fff;opacity:.8;transition:.2s;font-size:.9rem;}
 .topbar-right a:hover{opacity:1;}
@@ -196,6 +198,7 @@ img{max-width:100%;display:block;}
 .navbar .logo-name{font-size:1.4rem;font-weight:800;color:#0d3d7a;letter-spacing:-.01em;}
 .navbar .logo-name span{color:#1a5fb4;}
 .navbar .logo-tagline{font-size:.58rem;font-weight:700;color:#888;letter-spacing:.14em;text-transform:uppercase;margin-top:1px;}
+.navbar .logo-motto{font-size:.52rem;font-weight:600;color:#5a6b84;letter-spacing:.02em;margin-top:3px;}
 .logo-text{font-size:1.5rem;font-weight:800;color:var(--blue-dark);}
 .logo-text span{color:var(--blue);}
 .nav-links{display:flex;align-items:center;gap:4px;}
@@ -395,6 +398,7 @@ img{max-width:100%;display:block;}
 .ci-icon{width:50px;height:50px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
 .ci-text h4{font-size:.95rem;color:var(--blue-dark);margin-bottom:4px;}
 .ci-text p{font-size:.88rem;color:var(--text-light);}
+.ci-text a{color:var(--blue);font-weight:600;}
 .contact-form-wrap{background:#fff;border-radius:20px;padding:40px;box-shadow:var(--shadow);}
 .contact-map{background:var(--blue-pale);height:260px;border-radius:16px;overflow:hidden;margin-top:28px;display:flex;align-items:center;justify-content:center;color:var(--blue-dark);}
 .contact-map iframe{width:100%;height:100%;border:none;}
@@ -433,6 +437,8 @@ img{max-width:100%;display:block;}
 .contact-list li{color:rgba(255,255,255,.65);font-size:.87rem;display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
 .contact-list li::before{display:none;}
 .contact-list li i{color:var(--accent);margin-top:3px;flex-shrink:0;}
+.contact-list li a{color:rgba(255,255,255,.8);}
+.contact-list li a::before{content:none!important;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;text-align:center;}
 .footer-bottom p{color:rgba(255,255,255,.5);font-size:.85rem;}
 
@@ -446,6 +452,7 @@ img{max-width:100%;display:block;}
   .hamburger{display:flex;}
   .navbar .logo-name{font-size:1.1rem;}
   .navbar .logo-tagline{font-size:.5rem;}
+  .navbar .logo-motto{font-size:.46rem;}
   .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.1);gap:4px;}
   .nav-links.open{display:flex;}
   .dropdown-menu{position:static;box-shadow:none;border:none;padding:6px 0 6px 16px;display:none!important;}
@@ -469,8 +476,8 @@ img{max-width:100%;display:block;}
 <div class="topbar">
   <div class="container topbar-inner">
     <div class="topbar-left">
-      <span><i class="fas fa-phone-alt"></i> 0745067045</span>
-      <span><i class="fas fa-envelope"></i> info@jedicare.co.ke</span>
+      <a href="tel:+254745067045"><i class="fas fa-phone-alt"></i> 0745067045</a>
+      <a href="mailto:info@jedicare.co.ke"><i class="fas fa-envelope"></i> info@jedicare.co.ke</a>
       <span><i class="fas fa-clock"></i> Mon–Fri: 8:00am – 6:00pm</span>
     </div>
     <div class="topbar-right">
@@ -489,6 +496,7 @@ img{max-width:100%;display:block;}
       <span class="logo-texts">
         <span class="logo-name">Jedi<span>Care</span></span>
         <span class="logo-tagline">Medical Centre</span>
+        <span class="logo-motto">Your health our focus</span>
       </span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1692,12 +1700,12 @@ img{max-width:100%;display:block;}
             <div class="ci-text"><h4>Our Location</h4><p>Ronald Ngala street, Eldoret</p></div>
           </div>
           <div class="contact-info-item">
-            <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
-            <div class="ci-text"><h4>Phone Numbers</h4><p>+254745067045 (Main)</p></div>
+          <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="ci-text"><h4>Phone Numbers</h4><p><a href="tel:+254745067045">+254745067045</a> (Main)</p></div>
           </div>
           <div class="contact-info-item">
             <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-            <div class="ci-text"><h4>Email Address</h4><p>info@jedicare.co.ke<br>appointments@jedicare.com</p></div>
+            <div class="ci-text"><h4>Email Address</h4><p><a href="mailto:info@jedicare.co.ke">info@jedicare.co.ke</a><br><a href="mailto:appointments@jedicare.com">appointments@jedicare.com</a></p></div>
           </div>
           <div class="contact-info-item">
             <div class="ci-icon"><i class="fas fa-clock"></i></div>
@@ -1730,7 +1738,7 @@ img{max-width:100%;display:block;}
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo" onclick="showPage('home')">
-          <span class="logo-icon"><img src="WhatsApp Image 2026-02-21 at 22.40.25.jpeg" alt="JediCare Logo"/></span>
+          <span class="logo-icon"><img src="WhatsApp_Image_2026-02-21_at_22.40.25-removebg-preview.png" alt="JediCare Logo"/></span>
           <span class="logo-text">Jedi<span>Care</span></span>
         </a>
         <p>Our mission is to provide quality, compassionate, and responsive healthcare services to every patient, every time.</p>
@@ -1774,8 +1782,8 @@ img{max-width:100%;display:block;}
         <h4>Contact Info</h4>
         <ul class="contact-list">
           <li><i class="fas fa-map-marker-alt"></i> Ronald Ngala street, Eldoret</li>
-          <li><i class="fas fa-phone-alt"></i> 0745067045</li>
-          <li><i class="fas fa-envelope"></i> info@jedicare.co.ke</li>
+          <li><i class="fas fa-phone-alt"></i> <a href="tel:+254745067045">0745067045</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info@jedicare.co.ke">info@jedicare.co.ke</a></li>
           <li><i class="fas fa-clock"></i> Mon–Fri: 8:00am – 6:00pm</li>
         </ul>
       </div>
